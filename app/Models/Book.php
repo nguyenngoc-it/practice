@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Book extends Model
 {
     use HasFactory;
+    protected $table='books';
+    public $timestamps= false;
+
+    function category(){
+        return $this->belongsTo(Category::class);
+    }
+
 }
